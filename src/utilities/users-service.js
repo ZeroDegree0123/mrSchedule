@@ -5,12 +5,16 @@ export async function signUp(userData) {
   // which will ultimately return a JSON Web Token (JWT)
   const token = await usersAPI.signUp(userData);
   localStorage.setItem("token", token);
-  return token;
+  return getUser();
+}
+
+export function logOut() {
+  localStorage.removeItem("token");
 }
 
 export function getToken() {
   //Accessing local storage is synchronous code, not ASYNC.
-  const token = localStorage.getItem;
+  const token = localStorage.getItem("token");
   if (!token) return null; //Return null if no token exists
   const payload = JSON.parse(atob(token.split(".")[1]));
   // A JWT's expiration is expressed in seconds, not milliseconds
@@ -25,4 +29,14 @@ export function getToken() {
 export function getUser() {
   const token = getToken();
   return token ? JSON.parse(atob(token.split(".")[1])).user : null;
+}
+
+export async function login(credentials) {
+  const token = await usersAPI.login(credentials);
+  localStorage.setItem("token", token);
+  return getUser();
+}
+
+export async function checkToken() {
+  return usersAPI.checkToken().then((dateStr) => new DataTransfer(dateStr));
 }

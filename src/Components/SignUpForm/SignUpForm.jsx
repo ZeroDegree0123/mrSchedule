@@ -1,5 +1,5 @@
-import { Component } from 'react';
-import { signUp } from '../../utilities/users-service';
+import { Component } from "react";
+import { signUp } from "../../utilities/users-service";
 export default class SignUpForm extends Component {
   state = {
     name: "",
@@ -23,6 +23,7 @@ export default class SignUpForm extends Component {
       delete formData.error;
       //The promise returned by the sign up server method, will resolve to the user object included in the payload of the JSON WEB TOKEN (JWT)
       const user = await signUp(formData);
+      this.props.setUser(user);
     } catch {
       this.setState({ error: "Sign Up Failed - Try Again" });
     }
