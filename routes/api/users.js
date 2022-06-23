@@ -4,6 +4,7 @@ const usersCtrl = require("../../controllers/api/users");
 const ensureLoggedIn = require("../../config/ensureLoggedIn");
 
 //Post /api/users
+//having a problem connecting to database
 
 router.post("/", usersCtrl.create);
 
