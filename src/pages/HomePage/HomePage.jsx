@@ -3,20 +3,19 @@ import "./HomePage.css"
 export default function HomePage() {
     return (
         <>
-            <main>
-                <section>
-                    <h1>HEADER</h1>
+            <main className="home-page">
+                <section className="home-event-container">
+                    <h1>shows next event</h1>
+                    <hr />
+                    <button>Schedule An Event</button>
                 </section>
-                <section>
-                    <h1>SERVICES</h1>
-                    <h1>hello</h1>
+                <section className="home-upcoming-container">
+                    <h1>Upcoming Events</h1>
+                    <div>cards</div>
+                    <button>slider</button>
                 </section>
-                <section>
-                    <h1>REFERENCES</h1>
-                </section>
-                <section>
-                    <h1>CONTACT INF0/GALLERY?</h1>
-                </section>
+                {/* ///////////////////////// */}
+                <section></section>
             </main>
         </>
     )
