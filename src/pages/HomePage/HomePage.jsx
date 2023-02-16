@@ -9,6 +9,7 @@ export default function HomePage() {
                 </section>
                 <section>
                     <h1>SERVICES</h1>
+                    <h1>hello</h1>
                 </section>
                 <section>
                     <h1>REFERENCES</h1>
