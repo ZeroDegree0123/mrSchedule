@@ -1,41 +1,112 @@
 import "./NavBar.css"
 import { Link } from "react-router-dom";
 import * as userService from "../../utilities/users-service";
+import { useEffect, useState } from "react";
 
 export default function NavBar({ user, setUser }) {
+  const [nav, setNav] = useState();
+  const [toggle, setToggle] = useState();
+  const [userInfo, setUserInfo] = useState();
+  const [titles, setTitles] = useState();
+  const [navItems, setNavItems] = useState();
+  
+  useEffect(function() {
+    const getNav = async function() {
+      const navbar = document.querySelector('.nav-bar')
+      setNav(navbar);
+    }
+    getNav();
+
+    const getUserInfo = async function() {
+      const userInfo = document.querySelector('.user-info')
+      setUserInfo(userInfo);
+    }
+    getUserInfo();
+
+    const getTitles = async function() {
+      const titles = document.querySelector('.nav-titles');
+      setTitles(titles)
+    }
+    getTitles()
+
+    const getToggle = async function() {
+      const toggle = document.querySelector('.nav-toggle')
+      setToggle(toggle);
+    }
+    getToggle();
+    
+    const getNavItems = async function() {
+      const navItems = document.querySelector('.nav-list')
+      setNavItems(navItems);
+    }
+    getNavItems();
+    
+  }, [])
+  
+  function handleClick() {
+    if (nav.className === 'nav-bar') {
+      nav.classList.add('open')
+    } else (
+      nav.classList.remove('open')
+    )
+
+    if (toggle.className === 'nav-toggle') {
+      toggle.classList.add('open')
+    } else (
+      toggle.classList.remove('open')
+    )
+      
+    if (navItems.className === 'nav-list') {
+      navItems.classList.add('open')
+    } else (
+      navItems.classList.remove('open')
+    )
+
+    if (userInfo.className === 'user-info') {
+      userInfo.classList.add('open');
+    } else (
+      userInfo.classList.remove('open')
+    )
+
+    if (titles.className === 'nav-titles') {
+      titles.classList.add('open')
+    } else (
+      titles.classList.remove('open')
+    )
+  }
+    
   function handleLogOut() {
     userService.logOut();
     setUser(null);
   }
 
-  const navbar = document.querySelector('.nav-bar')
-  const toggle = document.querySelector('.nav-toggle')
-  // const navItems = document.querySelector('.nav-list')
 
-  // toggle.addEventListener('click', () => {
-  //   if (navbar.className === '.nav-bar') {
-  //     // sidebar
-  //   }
-  // })
 
+
+
+
+  console.log(nav)
+  // console.log(toggle)
+  console.log(navItems)
+  
   return (
     <nav className="nav-bar">{/* Effected */}
-      
-        <div className="nav-toggle">&#62;</div>
+    
+      <button className="nav-toggle" onClick={handleClick}>&#62;</button>
 
-      {/* Effected */}
+    {/* Effected */}
       <div className="user-info">
         <img src="https://imgur.com/XSenBva.png" alt="" />
         <h2 className="user-name">{user.name.toUpperCase()}</h2>
       </div>
 
-      {/* Effected */}
+    {/* Effected */}
       <div className="nav-titles">
           Navigation
       </div>
 
 
-      {/* Effected */}
+    {/* Effected */}
       <div className="nav-list">
         <Link id="logout" className="nav-item active" onClick={handleLogOut} to="/">Logout</Link>
         <Link id="logout" className="nav-item" onClick={handleLogOut} to="/">Logout</Link>
@@ -45,13 +116,11 @@ export default function NavBar({ user, setUser }) {
       </div>
       <hr />
 
-      {/* Effected */}
+    {/* Effected */}
       <div className="nav-titles">
           Support
       </div>
-
-
-      {/* Effected */}
+    {/* Effected */}
       <div className="nav-list"> 
         <Link id="logout" className="nav-item active" onClick={handleLogOut} to="/">Logout</Link>
         <Link id="logout" className="nav-item" onClick={handleLogOut} to="/">Logout</Link>
