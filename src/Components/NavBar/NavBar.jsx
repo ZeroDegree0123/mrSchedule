@@ -108,23 +108,23 @@ export default function NavBar({ user, setUser }) {
 
     {/* Effected */}
       <div className="nav-list">
-        <Link id="logout" className="nav-item active" onClick={handleLogOut} to="/">Logout</Link>
-        <Link id="logout" className="nav-item" onClick={handleLogOut} to="/">Logout</Link>
-        <Link id="logout" className="nav-item" onClick={handleLogOut} to="/">Logout</Link>
+        <Link id="logout" className="nav-item active" to="/">Home</Link>
+        <Link id="logout" className="nav-item" to="/">Events</Link>
+        <Link id="logout" className="nav-item" to="/">Account</Link>
         <Link id="logout" className="nav-item" onClick={handleLogOut} to="/">Logout</Link>
         {/* <Link className="nav-links" to="/login">Login</Link> */}
       </div>
       <hr />
 
     {/* Effected */}
-      <div className="nav-titles">
+      {/* <div className="nav-titles">
           Support
-      </div>
+      </div> */}
     {/* Effected */}
-      <div className="nav-list"> 
+      {/* <div className="nav-list"> 
         <Link id="logout" className="nav-item active" onClick={handleLogOut} to="/">Logout</Link>
         <Link id="logout" className="nav-item" onClick={handleLogOut} to="/">Logout</Link>
-      </div>
+      </div> */}
     </nav>
   );
 }

@@ -6,7 +6,8 @@ export default function HomePage() {
             <main className="home-page">
                 <section className="home-event-container">
                     <h1>shows next event</h1>
-                    <hr />
+                    <p>event item</p>
+                  
                     <button>Schedule An Event</button>
                 </section>
                 <section className="home-upcoming-container">
