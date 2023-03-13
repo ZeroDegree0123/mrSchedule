@@ -11,11 +11,11 @@ const eventSchema = new Schema({
         required: true,
     },
     date: {
-        type: Date,
+        type: String,
         required: true,
     },
     time: {
-        type: Number,
+        type: String,
         required: true,
     },
     user: { type: Schema.Types.ObjectId, ref: 'User'}
