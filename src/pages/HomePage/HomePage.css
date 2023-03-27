@@ -8,3 +8,15 @@
 .home-event-container {
     
 }
+
+.new-event-link {
+    text-decoration: none;
+    border: 2px solid green;
+    border-radius: 5px;
+    padding: 5px;
+    color: black;
+}
+
+.new-event-link:hover {
+    background-color: rgba(0, 128, 0, 0.5);
+}

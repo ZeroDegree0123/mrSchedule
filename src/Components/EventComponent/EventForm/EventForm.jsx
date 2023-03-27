@@ -2,12 +2,13 @@ import "./EventForm.css";
 import { useState } from "react";
 import * as eventsAPI from "../../../utilities/events-api"
 
-export default function EventForm() {
+export default function EventForm({user}) {
     const [event, setEvent] = useState({
         name: "",
         message: "",
         date: "",
         time: "",
+        user: user,
     })
 
     function handleChange(evt) {
@@ -22,6 +23,7 @@ export default function EventForm() {
             message: "",
             date: "",
             time: "",
+            user: user
         })
         
     }

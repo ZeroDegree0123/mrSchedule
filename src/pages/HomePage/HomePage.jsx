@@ -1,4 +1,5 @@
 import "./HomePage.css"
+import { Link } from "react-router-dom"
 
 export default function HomePage() {
     return (
@@ -6,9 +7,7 @@ export default function HomePage() {
             <main className="home-page">
                 <section className="home-event-container">
                     <h1>shows next event</h1>
-                    <p>event item</p>
-                  
-                    <button>Schedule An Event</button>
+                    <Link className="new-event-link" to="/events/new">Schedule An Event</Link>
                 </section>
                 <section className="home-upcoming-container">
                     <h1>Upcoming Events</h1>

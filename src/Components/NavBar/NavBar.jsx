@@ -109,7 +109,7 @@ export default function NavBar({ user, setUser }) {
     {/* Effected */}
       <div className="nav-list">
         <Link id="logout" className="nav-item active" to="/">Home</Link>
-        <Link id="logout" className="nav-item" to="/">Events</Link>
+        <Link id="logout" className="nav-item" to="/events">Events</Link>
         <Link id="logout" className="nav-item" to="/">Account</Link>
         <Link id="logout" className="nav-item" onClick={handleLogOut} to="/">Logout</Link>
         {/* <Link className="nav-links" to="/login">Login</Link> */}
