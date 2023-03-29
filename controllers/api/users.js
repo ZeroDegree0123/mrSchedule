@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const User = require("../../models/user");
 const bcrypt = require("bcrypt");
 
-createJWT = (user) => {
+const createJWT = (user) => {
   return jwt.sign(
     //data payload
     { user },
@@ -11,7 +11,7 @@ createJWT = (user) => {
   );
 };
 
-create = async (req, res) => {
+const create = async (req, res) => {
   try {
     //Add user to DB
     const user = await User.create(req.body);
@@ -25,7 +25,7 @@ create = async (req, res) => {
   }
 };
 
-login = async (req, res) => {
+const login = async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email });
     if (!user) throw new Error();
