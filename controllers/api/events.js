@@ -7,7 +7,7 @@ module.exports = {
 
 async function index(req, res) {
     try {
-        const events = await Event.findById({});
+        const events = await Event.find({});
         res.json(events)
     } catch (err) {
         res.send(err)

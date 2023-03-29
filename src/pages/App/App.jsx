@@ -4,10 +4,11 @@ import { Routes, Route } from "react-router-dom";
 import { getUser } from "../../utilities/users-service";
 import * as eventsAPI from "../../utilities/events-api"
 import NavBar from "../../Components/NavBar/NavBar";
-import Home from "../HomePage/HomePage"
 import Auth from "../AuthPage/AuthPage";
-import NewEventPage from "../NewEventPage/NewEventPage";
+import AccountPage from "../AccountPage/AccountPage";
 import EventPage from "../EventPage/EventPage";
+import Home from "../HomePage/HomePage"
+import NewEventPage from "../NewEventPage/NewEventPage";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -30,8 +31,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/events" element={<EventPage user={user} events={events}/>}/>
           <Route path="/events/new" element={<NewEventPage user={user}/>}/>
-
-          {/* <Route path="/auth" element={<Auth setUser={setUser}/>}/> */}
+          <Route path="/account" element={<AccountPage user={user}/>}/>
         </Routes>  
       </>
       :

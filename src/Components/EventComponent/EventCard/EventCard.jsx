@@ -1,7 +1,6 @@
 import "./EventCard.css"
 
 export default function EventCard({event, user}) {
-    
     return (
         <>
             <div>
