@@ -1,12 +1,14 @@
 .event-form {
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 50vmin;
+    background: rgb(93, 93, 213);
+    border: 2px solid black;
 }
 
 .form-inputs {
     margin: 10px;
-    
 }

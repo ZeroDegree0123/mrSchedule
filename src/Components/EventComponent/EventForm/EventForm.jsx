@@ -2,7 +2,7 @@ import "./EventForm.css";
 import { useState } from "react";
 import * as eventsAPI from "../../../utilities/events-api"
 
-export default function EventForm({user}) {
+export default function EventForm({user, formOpen, setFormOpen}) {
     const [event, setEvent] = useState({
         name: "",
         message: "",
@@ -11,11 +11,18 @@ export default function EventForm({user}) {
         user: user,
     })
 
+    if (!formOpen) return null;
+
+    function handleClick() {
+        setFormOpen(false)
+    }
+
     function handleChange(evt) {
         setEvent({...event, [evt.target.name]: evt.target.value})
     }
 
     async function handleSubmit(evt) {
+        setFormOpen(false);
         evt.preventDefault();
         eventsAPI.newEvent(event);
         setEvent({
@@ -30,13 +37,18 @@ export default function EventForm({user}) {
 
     return (
         <>
-            <form className="event-form" autoComplete="off" onSubmit={handleSubmit}>
-                <input className="form-inputs" type="text" name="name" value={event.name} onChange={handleChange} placeholder="event name"/>
-                <input className="form-inputs" id="message-input" type="text" name="message" value={event.message} onChange={handleChange} placeholder="event details"/>
-                <input className="form-inputs" type="text" name="date" value={event.date} onChange={handleChange} placeholder="date xx/xx/xxxx"/>
-                <input className="form-inputs" type="text" name="time" value={event.time} onChange={handleChange} placeholder="time 00:00pm/am"/>
-                <button>Add Event</button>
-            </form>
+                <form className="event-form" autoComplete="off" onSubmit={handleSubmit}>
+                    <label htmlFor="name">Name Of Event</label>
+                    <input id="name" className="form-inputs" type="text" name="name" value={event.name} onChange={handleChange} />
+                    <label htmlFor="date">Event Date</label>
+                    <input id="date" className="form-inputs" type="date" name="date" value={event.date} onChange={handleChange} placeholder="date xx/xx/xxxx"/>
+                    <label htmlFor="time">Event Time</label>
+                    <input id="time" className="form-inputs" type="text" name="time" value={event.time} onChange={handleChange} placeholder=" 00:00pm/am"/>
+                    <label htmlFor="message">Event Details</label>
+                    <textarea id="message" className="form-inputs" rows="4" name="message" value={event.message} onChange={handleChange}/>
+                    <button>Add Event</button>
+                    <button onClick={() => {handleClick()}}>Cancel</button>
+                </form>
         </>
     )
 }

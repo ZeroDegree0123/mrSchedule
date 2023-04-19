@@ -8,7 +8,6 @@ import Auth from "../AuthPage/AuthPage";
 import AccountPage from "../AccountPage/AccountPage";
 import EventPage from "../EventPage/EventPage";
 import Home from "../HomePage/HomePage"
-import NewEventPage from "../NewEventPage/NewEventPage";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -28,9 +27,8 @@ export default function App() {
       <>
         <NavBar user={user} setUser={setUser} />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home user={user}/>} />
           <Route path="/events" element={<EventPage user={user} events={events}/>}/>
-          <Route path="/events/new" element={<NewEventPage user={user}/>}/>
           <Route path="/account" element={<AccountPage user={user}/>}/>
         </Routes>  
       </>

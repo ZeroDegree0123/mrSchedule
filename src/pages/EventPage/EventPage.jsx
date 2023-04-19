@@ -5,8 +5,7 @@ export default function EventPage({events, user}) {
     return (
         <>
             <main className="event-page">
-                <EventList events={events} user={user}/>
-                <h1>hello</h1>
+                    <EventList events={events} user={user}/>
             </main>
         </>
     )

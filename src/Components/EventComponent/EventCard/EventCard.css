@@ -1,0 +1,46 @@
+.event-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border: 2px solid salmon;
+    border-radius: 10px;
+    padding: 20px;
+    width: 30vmin;
+}
+
+.card-name {
+    text-align: left;
+    border: 1px solid red;
+    padding: 5px;
+    width: 100%;
+}
+
+.event-time {
+    margin: 0 10px;
+}
+
+.card-date-time {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.card-message {
+    border: 1px solid red;
+    border-radius: 5px;
+    min-width: 90%;
+    min-height: 100px;
+}
+
+.card-button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.card-buttons {
+}
