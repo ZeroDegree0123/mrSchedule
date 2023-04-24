@@ -1,9 +1,13 @@
 import "./AccountPage.css"
-export default function AccountPage() {
+export default function AccountPage({user}) {
     return (
         <>
             <main className="account-page">
-                <h1>Account</h1>
+                <section>
+                    <h1>user info</h1>
+                    {user.name}
+                    {user.email}
+                </section>
             </main>
         </>
     )

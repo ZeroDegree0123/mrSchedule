@@ -2,24 +2,23 @@ import "./HomePage.css"
 import { useState,  } from "react"
 import { Link } from "react-router-dom"
 import EventForm from "../../Components/EventComponent/EventForm/EventForm"; 
+import EventListSingle from "../../Components/EventComponent/EventListSingle/EventListSingle";
 
-export default function HomePage({user}) {
+export default function HomePage({user, events}) {
     const [formOpen, setFormOpen] = useState(false);
 
     return (
         <main className="home-page">
-            <div className="next-event-container">
-                <Link className="next-event" to="/events"> Next Event</Link>
-            </div>
-            <hr />
             <section className="new-event-container">
-                <EventForm user={user} formOpen={formOpen} setFormOpen={setFormOpen}/>
-                <button className="new-event-link" onClick={() => {setFormOpen(true)}}>Schedule An Event</button>
+                <div className="new-event-box">
+                    <EventForm user={user} formOpen={formOpen} setFormOpen={setFormOpen}/>
+                    <button className="new-event-button" onClick={() => {setFormOpen(true)}}>+ Schedule An Event</button>
+                </div>
             </section>
             <section className="home-upcoming-container">
-                <h1>Upcoming Events</h1>
-                <div>cards</div>
-                <button>slider</button>
+                <h1 className="home-upcoming-title">Upcoming Events</h1>
+                <EventListSingle user={user} events={events}/>
+             
             </section>
         </main>
     )
