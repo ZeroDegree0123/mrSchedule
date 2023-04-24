@@ -12,6 +12,10 @@
     height: 30vmin;
 }
 
+.next-event {
+    text-decoration: none;
+}
+
 .new-event-container {
     display: flex;
     flex-direction: column;

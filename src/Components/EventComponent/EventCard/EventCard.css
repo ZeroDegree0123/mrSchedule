@@ -1,37 +1,40 @@
 .event-card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     margin: 10px;
-    border: 2px solid salmon;
-    border-radius: 10px;
-    padding: 20px;
-    width: 30vmin;
+    border: 2px solid rgba(52, 143, 255, 0.064);
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.06);
+    padding: 15px;
+    width: 35vmin;
+    min-height: 45vmin;
 }
 
 .card-name {
-    text-align: left;
-    border: 1px solid red;
     padding: 5px;
+    margin: 10px;
     width: 100%;
 }
 
 .event-time {
+    font-size: 14px;
     margin: 0 10px;
 }
 
 .card-date-time {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     width: 100%;
 }
 
 .card-message {
-    border: 1px solid red;
+    border-top: 2px solid rgba(52, 143, 255, 0.132);
     border-radius: 5px;
-    min-width: 90%;
+    padding: 5px;
+    min-width: 95%;
     min-height: 100px;
 }
 
@@ -39,8 +42,31 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-top: 30px;
 }
 
 .card-buttons {
+    color: black;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+#edit-button {
+    color: rgb(243, 176, 19);
+    border: 1px solid rgb(243, 176, 19);
+}
+
+#delete-button {
+    color: rgb(243, 75, 19);
+    border: 1px solid rgb(243, 75, 19);
+}
+
+#edit-button:hover {
+    color: white;
+    background-color: rgb(243, 176, 19);
+}
+
+#delete-button:hover {
+    color: white;
+    background-color: rgb(243, 75, 19);
 }

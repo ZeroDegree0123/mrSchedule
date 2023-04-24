@@ -13,8 +13,8 @@ export default function EventCard({event, user}) {
                 </div>
                 <p className="card-message">{event.message}</p>
                 <div className="card-button-container">
-                    <button className="card-buttons">Edit</button>
-                    <button className="card-buttons">Delete</button>
+                    <button id="edit-button" className="card-buttons">Edit</button>
+                    <button id="delete-button" className="card-buttons">Delete</button>
                 </div>
             </div>
         </>
