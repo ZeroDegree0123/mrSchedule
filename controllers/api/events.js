@@ -3,6 +3,7 @@ const Event = require('../../models/event');
 module.exports = {
     index,
     create,
+    show,
 }
 
 async function index(req, res) {
@@ -30,5 +31,14 @@ async function create(req, res) {
     } catch (err){
         console.log(err)
         res.send(err)
+    }
+}
+
+async function show(req, res) {
+    try {
+        const event = await Event.findById(req.params.id)
+        res.status(200).json(event);
+    } catch (err) {
+        res.status(400).json({ message: err.message })
     }
 }

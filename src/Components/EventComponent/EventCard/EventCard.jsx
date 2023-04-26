@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import "./EventCard.css"
 
 export default function EventCard({event, user}) {
@@ -8,10 +9,10 @@ export default function EventCard({event, user}) {
             <div className="event-card">
                 <div className="event-card-left">
                     <div className="color-box"></div>
-                    <div className="event-card-info">
+                    <Link className="event-card-info" to={`/events/${event._id}`}>
                         <h2 className="card-name">{event.name}</h2>
                         <p>Scheduled For {event.date}</p>
-                    </div>
+                    </Link>
                 </div>
                 {/* <div className="card-date-time">
                     <p className="event-time">{eventDate}</p>

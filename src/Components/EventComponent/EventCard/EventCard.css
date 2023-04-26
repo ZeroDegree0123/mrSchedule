@@ -25,6 +25,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    text-decoration: none;
+    color: black;
     margin-left: 20px;
 }
 

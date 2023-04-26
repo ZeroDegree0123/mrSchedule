@@ -7,6 +7,7 @@ import NavBar from "../../Components/NavBar/NavBar";
 import Auth from "../AuthPage/AuthPage";
 import AccountPage from "../AccountPage/AccountPage";
 import EventPage from "../EventPage/EventPage";
+import EventDetailPage from "../EventDetailPage/EventDetailPage";
 import Home from "../HomePage/HomePage"
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home user={user} events={events}/>} />
             <Route path="/events" element={<EventPage user={user} events={events}/>}/>
+            <Route path="/events/:eventId/*" element={<EventDetailPage />}/>
             <Route path="/account" element={<AccountPage user={user}/>}/>
           </Routes>  
         </>

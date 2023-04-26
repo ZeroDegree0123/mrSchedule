@@ -8,3 +8,7 @@ export function allEvents() {
 export function newEvent(events) {
     return sendRequest(`${BASE_URL}/new`, "POST", events)
 }
+
+export function showEvent(eventId) {
+    return sendRequest(`${BASE_URL}/${eventId}`)
+}
