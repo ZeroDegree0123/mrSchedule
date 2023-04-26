@@ -8,6 +8,7 @@
     border-radius: 5px;
     box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.06);
     padding: 20px;
+    padding-right: 0;
     width: 90%;
     min-height: 20vmin;
 }
@@ -19,9 +20,16 @@
     align-items: center;
 }
 
+.event-card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+
 .card-name {
-    padding: 5px;
-    margin: 10px 30px;
+    margin: 0;
 }
 
 .event-time {
@@ -64,6 +72,29 @@
     width: 100px;
     border: 4px solid var(--primary);
     background-color: white;
+}
+
+.event-card-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.blue-strip {
+    grid-area: 2 / 1 / 3 / 4;
+    /* width: 100px;
+    height: 40px; */
+    background-color: var(--primary);
+    z-index: 1;
+}
+
+.star {
+    grid-area: 2 / 2 / 3 / 3;
+    background-color: white;
+    width: 25px;
+    height: 25px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    z-index: 5;
 }
 
 #edit-button {
