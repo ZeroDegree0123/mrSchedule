@@ -3,10 +3,23 @@ export default function AccountPage({user}) {
     return (
         <>
             <main className="account-page">
-                <section>
-                    <h1>user info</h1>
-                    {user.name}
-                    {user.email}
+                <h1 className="account-page-title">User Info</h1>
+                <div className="line-breaker"></div>
+                <section className="account-body-container">
+                    <div className="account-name-container">
+                        <p className="account-labels">Name</p>
+                        <p className="account-info">{user.name}</p>
+                    </div>
+                    <hr />
+                    <div className="account-email-container">
+                        <p className="account-labels">Email</p>
+                        <p className="account-info">{user.email}</p>
+                    </div>
+                    <hr />
+                </section>
+                <section className="">
+                    <h1>password change</h1>
+                    <h1>edit profile</h1>
                 </section>
             </main>
         </>

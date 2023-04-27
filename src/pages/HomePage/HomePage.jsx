@@ -9,6 +9,7 @@ export default function HomePage({user, events}) {
 
     return (
         <main className="home-page">
+            <h1 className="app-name">Mr.Schedule</h1>
             <section className="new-event-container">
                 <div className="new-event-box">
                     <EventForm user={user} formOpen={formOpen} setFormOpen={setFormOpen}/>

@@ -1,7 +1,40 @@
 .account-page {
-    display: flex;
+    width: 100%;
+}
+
+.account-page-title {
+    padding-top: 10px;
+    width: 100%;
+    
+}
+
+.account-body-container {
+    display: flex; 
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    width: 100%;
+    align-items: flex-start;
+    margin: 30px 50px;
+}
+
+.account-name-container {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.account-email-container {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.account-labels {
+    margin: 16px 0 10px 0;
+    color: rgba(68, 95, 100, 0.8);
+}
+
+.account-info {
+    margin: 0;
 }

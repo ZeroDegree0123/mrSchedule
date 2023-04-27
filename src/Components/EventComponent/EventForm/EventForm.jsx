@@ -24,10 +24,10 @@ export default function EventForm({user, formOpen, setFormOpen}) {
         setEvent({...event, [evt.target.name]: evt.target.value})
     }
 
-    function handleDateChange(evt) {
-        const {name, value } = evt.date
-        setEvent({...event, [name]: value})
-    }
+    // function handleDateChange(evt) {
+    //     const {name, value } = evt.date
+    //     setEvent({...event, [name]: value})
+    // }
 
     async function handleSubmit(evt) {
         setFormOpen(false);
@@ -44,19 +44,19 @@ export default function EventForm({user, formOpen, setFormOpen}) {
     }
 
     return (
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
+        // <LocalizationProvider dateAdapter={AdapterDayjs}>
             <form className="event-form" autoComplete="off" onSubmit={handleSubmit}>
                 <h2 className="event-title">Create Event</h2>
-                <input id="name" className="form-inputs" type="text" name="name" value={event.name} onChange={handleChange} placeholder="Name Of Event"/>
+                <input id="name" className="form-inputs" type="text" name="name" value={event.name} onChange={handleChange} placeholder="Name of Event"/>
                 <input id="date" className="form-inputs" type="date" name="date" value={event.date} onChange={handleChange}/>
                 {/* <DatePicker id="date" name="date" value={event.date} onChange={handleDateChange}/> */}
-                <input id="time" className="form-inputs" type="text" name="time" value={event.time} onChange={handleChange} placeholder=" 00:00pm/am"/>
+                <input id="time" className="form-inputs" type="text" name="time" value={event.time} onChange={handleChange} placeholder="Time - 00:00pm/am"/>
                 <textarea id="message" className="form-inputs" rows="2" name="message" value={event.message} onChange={handleChange} placeholder="Event Details"/>
                 <div className="form-button-container">
                     <button id="submit-button" className="form-buttons" >Add Event</button>
                     <button id="cancel-button" className="form-buttons"  onClick={() => {handleClick()}}>Cancel</button>
                 </div>
             </form>
-        </LocalizationProvider>
+        // </LocalizationProvider>
     )
 }

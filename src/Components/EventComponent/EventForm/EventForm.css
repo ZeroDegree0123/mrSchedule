@@ -2,10 +2,11 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    padding: 10px;
-    width: 40vmin;
+    padding: 20px;
+    width: 50vmin;
+    height: 50vmin;
     background: white;
     border: 2px solid rgba(52, 143, 255, 0.064);
     border-radius: 5px;
@@ -18,21 +19,25 @@
 
 .form-inputs {
     font-size: 12px;
-    border: 2px solid grey;
+    border: none;
+    border-bottom: 1px solid grey;
     border-radius: 2px;
     width: 90%;
-    margin: 10px;
+    height: 25px;
+    margin: 15px 5px;
 }
 
 .form-button-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 100%;
 }
 
 .form-buttons {
     background-color: white;
     border-radius: 3px;
+    margin-top: 20px;
+    width: 20.2vmin;
 }
 
 #cancel-button {
