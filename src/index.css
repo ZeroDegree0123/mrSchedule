@@ -1,6 +1,7 @@
 :root {
   --primary: rgba(46, 220, 220, 0.7);
   --secondary: rgba(51, 217, 134, 0.568);
+  --third: rgba(255, 187, 0, .5);
 }
 
 *,

@@ -1,0 +1,40 @@
+.auth-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100vmin;
+    margin: 0 30px;
+}
+
+.auth-content-container {
+    text-align: left;
+    width: 100%;
+    height: 100%
+}
+
+.getting-started {
+    color: black;
+    margin: 5px;
+    margin-top: 15px;
+}
+
+.auth-toggle-button {
+    text-decoration: underline;
+    font-size: 16px;
+    color: var(--primary);
+    margin: 0 5px;
+    border: none;
+    background-color: white;
+
+}
+
+.auth-toggle-button:hover {
+    color: rgba(255, 187, 0, .5);
+}
+
+.auth-p {
+    color: black;
+    margin: 10px;
+}
