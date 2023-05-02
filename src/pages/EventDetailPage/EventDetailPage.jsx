@@ -2,10 +2,12 @@ import "./EventDetailPage.css"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react";
 import * as eventsAPI from "../../utilities/events-api";
+import EventForm from "../../Components/EventComponent/EventForm/EventForm"
 
-export default function EventDetailPage() {
+export default function EventDetailPage({redirect}) {
     const { eventId } = useParams();
     const [event, setEvent] = useState([]);
+    const [formOpen, setFormOpen] = useState(false);
 
     useEffect(function () {
         const getEvent = async function() {
@@ -15,11 +17,17 @@ export default function EventDetailPage() {
         getEvent();
     }, [])
 
+    const handleDelete = function() {
+        eventsAPI.deleteEvent(eventId);
+        redirect();
+    }
+    
     return (
         <>
             <main className="event-detail-page">
-                    <h1 className="event-detail-name">{event.name}</h1>
+                <h1 className="event-detail-name">{event.name}</h1>
                 <section className="detail-page-header">
+                <EventForm formOpen={formOpen} setFormOpen={setFormOpen} editEvent={event} update="update"/>
                     <div className="event-detail-date-container">
                         <h4>Scheduled For</h4>
                         <p className="event-detail-date">{event.date}</p>
@@ -32,7 +40,8 @@ export default function EventDetailPage() {
                         <h4>Event Details</h4>
                         <p className="event-detail-message">{event.message}</p>
                     </div>
-                    <button className="event-edit-button">Edit Task</button>
+                    <button className="event-edit-button" onClick={() => {setFormOpen(true)}}>Edit Task</button>
+                    <button onClick={handleDelete} className="event-edit-button" >Delete Task</button>
                 </section>
                 <div className="line-breaker-big"></div>
             </main>

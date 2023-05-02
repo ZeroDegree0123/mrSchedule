@@ -1,8 +1,28 @@
-import { Link } from "react-router-dom"
 import "./EventCard.css"
+import { Link } from "react-router-dom"
+import * as eventsAPI from "../../../utilities/events-api"
 
 export default function EventCard({event, user}) {
     const eventDate = event.date.slice(0, 10)
+
+    // const handleClick = async () => {
+    //     const response = await fetch("/api/workouts/" + event._id, {
+    //         method: "DELETE"
+    //     })
+    //     const json = await response.json()
+    // }
+
+    // const handleClick = async () => {
+    //     const response = eventsAPI.singleEvent();
+    //     const json = await response.json()
+
+    //     if (response.ok) {
+
+    //     }
+
+    // }
+
+    
 
     return (
         <>
@@ -12,6 +32,7 @@ export default function EventCard({event, user}) {
                     <Link className="event-card-info" to={`/events/${event._id}`}>
                         <h2 className="card-name">{event.name}</h2>
                         <p>Scheduled For {event.date}</p>
+                        {/* <span>delete</span> */}
                     </Link>
                 </div>
                 {/* <div className="card-date-time">

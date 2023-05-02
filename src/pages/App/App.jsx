@@ -1,6 +1,6 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { getUser } from "../../utilities/users-service";
 import * as eventsAPI from "../../utilities/events-api"
 import NavBar from "../../Components/NavBar/NavBar";
@@ -13,6 +13,7 @@ import Home from "../HomePage/HomePage"
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [events, setEvents] = useState([]);
+  const navigate = useNavigate();
  
   useEffect(function() {
     const getEvents = async function() {
@@ -22,6 +23,11 @@ export default function App() {
     getEvents();
   }, []) 
 
+  function redirect() {
+    let path = `/`;
+    navigate(path);
+  };
+
   return (
       <main className="App">
         {user ?
@@ -30,7 +36,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home user={user} events={events}/>} />
             <Route path="/events" element={<EventPage user={user} events={events}/>}/>
-            <Route path="/events/:eventId/*" element={<EventDetailPage />}/>
+            <Route path="/events/:eventId/*" element={<EventDetailPage redirect={redirect}/>}/>
             <Route path="/account" element={<AccountPage user={user}/>}/>
           </Routes>  
         </>

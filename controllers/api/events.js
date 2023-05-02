@@ -4,6 +4,8 @@ module.exports = {
     index,
     create,
     show,
+    remove,
+    update
 }
 
 async function index(req, res) {
@@ -25,9 +27,9 @@ async function create(req, res) {
             timestamps: req.body.timestamps,
             user: req.body.user
         });
+
         await newEvent.save();
         res.json(newEvent)
-        
     } catch (err){
         console.log(err)
         res.send(err)
@@ -37,6 +39,31 @@ async function create(req, res) {
 async function show(req, res) {
     try {
         const event = await Event.findById(req.params.id)
+        res.status(200).json(event);
+    } catch (err) {
+        res.status(400).json({ message: err.message })
+    }
+}
+
+async function remove(req, res) {
+    try {
+        await Event.findByIdAndDelete({_id: req.params.id})
+    } catch (err) {
+        res.status(400).json({ message: err.message })
+    }
+}
+
+async function update(req, res) {
+    try {
+        const event = await Event.findById(req.params.id);
+
+        event.user = req.user._id;
+        event.name = req.body.name;
+        event.date = req.body.date;
+        event.time = req.body.time;
+        event.message = req.body.message;
+
+        await event.save();
         res.status(200).json(event);
     } catch (err) {
         res.status(400).json({ message: err.message })

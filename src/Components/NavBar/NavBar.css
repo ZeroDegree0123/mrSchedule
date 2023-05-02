@@ -2,7 +2,7 @@
     position: absolute;
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     padding: 30px;
     height: 100vh;
@@ -12,14 +12,15 @@
     background: rgba(10, 10, 10, .65);
     box-shadow: 0 8px 32px rgb(2, 4, 24);
     border-right: 2px solid rgba(255, 255, 255, .09);
-    transition: .4s;
+    transition: .2s;
 }
 
 .nav-bar {
+    position: absolute;
     width: 0;
     background: none;
     box-shadow: none;
-    transition: .4s ease-in-out;
+    transition: .2s linear;
 }
 
 

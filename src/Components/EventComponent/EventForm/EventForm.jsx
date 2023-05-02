@@ -1,11 +1,8 @@
 import "./EventForm.css";
-import { useState } from "react";
-import { LocalizationProvider } from '@mui/x-date-pickers';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
-import { DatePicker } from '@mui/x-date-pickers/DatePicker'
+import { useEffect, useState } from "react";
 import * as eventsAPI from "../../../utilities/events-api"
 
-export default function EventForm({user, formOpen, setFormOpen}) {
+export default function EventForm({user, formOpen, setFormOpen, editEvent, update}) {
     const [event, setEvent] = useState({
         name: "",
         message: "",
@@ -13,6 +10,20 @@ export default function EventForm({user, formOpen, setFormOpen}) {
         time: "",
         user: user,
     })
+    
+    useEffect(function() {
+        if  (editEvent) {
+            const setExistingData = () => 
+                setEvent({
+                    name: editEvent.name,
+                    message: editEvent.message,
+                    date: editEvent.date,
+                    time: editEvent.time,
+                    user: editEvent.user
+                });
+            setExistingData();
+         }
+    }, [])
 
     if (!formOpen) return null;
 
@@ -24,11 +35,6 @@ export default function EventForm({user, formOpen, setFormOpen}) {
         setEvent({...event, [evt.target.name]: evt.target.value})
     }
 
-    // function handleDateChange(evt) {
-    //     const {name, value } = evt.date
-    //     setEvent({...event, [name]: value})
-    // }
-
     async function handleSubmit(evt) {
         setFormOpen(false);
         evt.preventDefault();
@@ -39,13 +45,20 @@ export default function EventForm({user, formOpen, setFormOpen}) {
             date: "",
             time: "",
             user: user
-        })
-        
+        });
     }
+
+    async function handleUpdate(evt) {
+        setFormOpen(false);
+        evt.preventDefault();
+        const updatedEvent = await eventsAPI.updateEvent(event, editEvent._id);
+        setEvent(updatedEvent);
+    };
+
 
     return (
         // <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <form className="event-form" autoComplete="off" onSubmit={handleSubmit}>
+            <form className="event-form" autoComplete="off" onSubmit={(evt) => update ? handleUpdate(evt, event) : handleSubmit(evt)}>
                 <h2 className="event-title">Create Event</h2>
                 <input id="name" className="form-inputs" type="text" name="name" value={event.name} onChange={handleChange} placeholder="Name of Event"/>
                 <input id="date" className="form-inputs" type="date" name="date" value={event.date} onChange={handleChange}/>
