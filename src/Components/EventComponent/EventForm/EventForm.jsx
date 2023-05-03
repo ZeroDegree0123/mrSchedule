@@ -23,7 +23,7 @@ export default function EventForm({user, formOpen, setFormOpen, editEvent, updat
                 });
             setExistingData();
          }
-    }, [])
+    }, [editEvent])
 
     if (!formOpen) return null;
 
@@ -59,7 +59,7 @@ export default function EventForm({user, formOpen, setFormOpen, editEvent, updat
     return (
         // <LocalizationProvider dateAdapter={AdapterDayjs}>
             <form className="event-form" autoComplete="off" onSubmit={(evt) => update ? handleUpdate(evt, event) : handleSubmit(evt)}>
-                <h2 className="event-title">Create Event</h2>
+                <h2 className="event-title">Event Form</h2>
                 <input id="name" className="form-inputs" type="text" name="name" value={event.name} onChange={handleChange} placeholder="Name of Event"/>
                 <input id="date" className="form-inputs" type="date" name="date" value={event.date} onChange={handleChange}/>
                 {/* <DatePicker id="date" name="date" value={event.date} onChange={handleDateChange}/> */}

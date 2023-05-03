@@ -2,6 +2,7 @@
   --primary: rgba(46, 220, 220, 0.7);
   --secondary: rgba(51, 217, 134, 0.568);
   --third: rgba(255, 187, 0, .5);
+  --fourth: rgba(255, 0, 0, 0.5);
 }
 
 *,
@@ -11,15 +12,16 @@
 }
 
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: white;
+  margin: 0;
   padding: 0;
-  height: 100vh;
+  height: 100vmin;
+  width: 100%;
 }
 
 code {
@@ -29,6 +31,18 @@ code {
 
 hr {
   width: 100%;
+}
+
+.line-breaker {
+  background-color: rgba(0, 0, 0, 0.042);
+  width: 100%;
+  height: 20px;
+}
+
+.line-breaker-big {
+  background-color: rgba(0, 0, 0, 0.042);
+  width: 100%;
+  height: 60vmin;
 }
 
 #root {

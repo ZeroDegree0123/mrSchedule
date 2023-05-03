@@ -38,7 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70vh;
+    width: 80%;
     height: 30vh;
     border: 1px dotted black;
     border-radius: 10px;
@@ -60,7 +60,6 @@
 }
 
 /* /////////////// Home Upcoming Events //////////////// */
-
 .home-upcoming-container {
     display: flex;
     flex-direction: column;
@@ -71,4 +70,11 @@
 .home-upcoming-title {
     text-align: left;
     margin: 20px;
+}
+
+/* /////////////// @media //////////////// */
+@media only screen and (max-width: 600px) {
+    .new-event-box {
+        height: 20vh;
+    }
 }

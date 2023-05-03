@@ -17,9 +17,9 @@ export default function AccountPage({user}) {
                     </div>
                     <hr />
                 </section>
-                <section className="">
-                    <h1>password change</h1>
-                    <h1>edit profile</h1>
+                <section className="account-options-container">
+                    {/* <h1>password change</h1>
+                    <h1>edit profile</h1> */}
                 </section>
             </main>
         </>

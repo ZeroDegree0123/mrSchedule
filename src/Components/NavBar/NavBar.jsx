@@ -74,13 +74,21 @@ export default function NavBar({ user, setUser }) {
       titles.classList.remove('open')
     )
   }
-    
+  
   function handleLogOut() {
     userService.logOut();
     setUser(null);
   }
+  
 
-
+  function setActive() {
+    navItems.forEach(item => {
+      item.addEventListener("click", () => {
+        item.classList.remove("active");
+      })
+      item.classList.add("active")
+    })
+  }
 
 
 
@@ -90,27 +98,20 @@ export default function NavBar({ user, setUser }) {
   console.log(navItems)
   
   return (
-    <nav className="nav-bar">{/* Effected */}
-    
+    <nav className="nav-bar">
       <button className="nav-toggle" onClick={handleClick}>&#62;</button>
 
-    {/* Effected */}
       <div className="user-info">
         <img src="https://imgur.com/XSenBva.png" alt="" />
         <h2 className="user-name">{user.name.toUpperCase()}</h2>
       </div>
 
-    {/* Effected */}
-      <div className="nav-titles">
-          Navigation
-      </div>
+      <div className="nav-titles">Navigation</div>
 
-
-    {/* Effected */}
       <div className="nav-list">
-        <Link id="logout" className="nav-item active" to="/">Home</Link>
-        <Link id="logout" className="nav-item" to="/events">Events</Link>
-        <Link id="logout" className="nav-item" to="/account">Account</Link>
+        <Link id="logout" className="nav-item" setActive to="/">Home</Link>
+        <Link id="logout" className="nav-item"  to="/events">Events</Link>
+        <Link id="logout" className="nav-item"  to="/account">Account</Link>
         <Link id="logout" className="nav-item" onClick={handleLogOut} to="/">Logout</Link>
         {/* <Link className="nav-links" to="/login">Login</Link> */}
       </div>

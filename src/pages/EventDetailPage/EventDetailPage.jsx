@@ -25,14 +25,15 @@ export default function EventDetailPage({redirect}) {
     return (
         <>
             <main className="event-detail-page">
-                <h1 className="event-detail-name">{event.name}</h1>
-                <section className="detail-page-header">
                 <EventForm formOpen={formOpen} setFormOpen={setFormOpen} editEvent={event} update="update"/>
+                <section className="detail-page-header">
+                    <h1 className="event-detail-name">{event.name}</h1>
                     <div className="event-detail-date-container">
                         <h4>Scheduled For</h4>
                         <p className="event-detail-date">{event.date}</p>
+                        <p className="event-detail-date">{event.time}</p>
                     </div>
-                    <button className="event-complete-button">Complete Task</button>
+                    {/* <button className="event-complete-button">Complete Task</button> */}
                 </section>
                 <div className="line-breaker"></div>
                 <section className="event-body-container">
@@ -40,9 +41,11 @@ export default function EventDetailPage({redirect}) {
                         <h4>Event Details</h4>
                         <p className="event-detail-message">{event.message}</p>
                     </div>
-                    <button className="event-edit-button" onClick={() => {setFormOpen(true)}}>Edit Task</button>
-                    <button onClick={handleDelete} className="event-edit-button" >Delete Task</button>
                 </section>
+                <div className="event-options-container">
+                    <button className="event-edit-button" onClick={() => {setFormOpen(true)}}>Edit Task</button>
+                    <button id="delete" className="event-edit-button" onClick={handleDelete}>Delete Task</button>
+                </div>
                 <div className="line-breaker-big"></div>
             </main>
         </>
