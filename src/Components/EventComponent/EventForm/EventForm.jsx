@@ -57,12 +57,10 @@ export default function EventForm({user, formOpen, setFormOpen, editEvent, updat
 
 
     return (
-        // <LocalizationProvider dateAdapter={AdapterDayjs}>
             <form className="event-form" autoComplete="off" onSubmit={(evt) => update ? handleUpdate(evt, event) : handleSubmit(evt)}>
                 <h2 className="event-title">Event Form</h2>
                 <input id="name" className="form-inputs" type="text" name="name" value={event.name} onChange={handleChange} placeholder="Name of Event"/>
                 <input id="date" className="form-inputs" type="date" name="date" value={event.date} onChange={handleChange}/>
-                {/* <DatePicker id="date" name="date" value={event.date} onChange={handleDateChange}/> */}
                 <input id="time" className="form-inputs" type="text" name="time" value={event.time} onChange={handleChange} placeholder="Time - 00:00pm/am"/>
                 <textarea id="message" className="form-inputs" rows="2" name="message" value={event.message} onChange={handleChange} placeholder="Event Details"/>
                 <div className="form-button-container">
@@ -70,6 +68,5 @@ export default function EventForm({user, formOpen, setFormOpen, editEvent, updat
                     <button id="cancel-button" className="form-buttons"  onClick={() => {handleClick()}}>Cancel</button>
                 </div>
             </form>
-        // </LocalizationProvider>
     )
 }
