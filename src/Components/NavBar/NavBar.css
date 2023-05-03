@@ -156,7 +156,8 @@
 }
 
 .nav-item:hover {
-    background-color: rgb(255, 255, 255, .1);
+    /* background-color: rgb(255, 255, 255, .1); */
+    background-color: rgb(31, 191, 191, .4);
 
 }
 
@@ -185,4 +186,8 @@
 
 .nav-bar.open > .nav-toggle {
     transform: rotateY(180deg);
+}
+
+.nav-bar.open > .nav-toggle:hover {
+    background-color: rgb(31, 191, 191, .4);
 }

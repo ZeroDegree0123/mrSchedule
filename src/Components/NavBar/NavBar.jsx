@@ -109,7 +109,7 @@ export default function NavBar({ user, setUser }) {
       <div className="nav-titles">Navigation</div>
 
       <div className="nav-list">
-        <Link id="logout" className="nav-item" setActive to="/">Home</Link>
+        <Link id="logout" className="nav-item"  to="/">Home</Link>
         <Link id="logout" className="nav-item"  to="/events">Events</Link>
         <Link id="logout" className="nav-item"  to="/account">Account</Link>
         <Link id="logout" className="nav-item" onClick={handleLogOut} to="/">Logout</Link>

@@ -1,4 +1,6 @@
 .app-name {
+    font-size: 40px;
+    font-style: oblique;
     background-color: var(--primary);
     padding: 20px;
     margin: 0;
