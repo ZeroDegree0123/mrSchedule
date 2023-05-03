@@ -33,7 +33,6 @@ export default function EventDetailPage({redirect}) {
                         <p className="event-detail-date">{event.date}</p>
                         <p className="event-detail-date">{event.time}</p>
                     </div>
-                    {/* <button className="event-complete-button">Complete Task</button> */}
                 </section>
                 <div className="line-breaker"></div>
                 <section className="event-body-container">
