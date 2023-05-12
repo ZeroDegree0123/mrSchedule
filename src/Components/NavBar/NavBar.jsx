@@ -81,14 +81,14 @@ export default function NavBar({ user, setUser }) {
   }
   
 
-  function setActive() {
-    navItems.forEach(item => {
-      item.addEventListener("click", () => {
-        item.classList.remove("active");
-      })
-      item.classList.add("active")
-    })
-  }
+  // function setActive() {
+  //   navItems.forEach(item => {
+  //     item.addEventListener("click", () => {
+  //       item.classList.remove("active");
+  //     })
+  //     item.classList.add("active")
+  //   })
+  // }
 
 
 

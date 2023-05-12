@@ -1,9 +1,7 @@
 import "./EventCard.css"
 import { Link } from "react-router-dom"
-import * as eventsAPI from "../../../utilities/events-api"
 
 export default function EventCard({event, user}) {
-    // const eventDate = event.date.slice(0, 10)
 
     return (
         <>

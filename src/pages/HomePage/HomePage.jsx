@@ -1,6 +1,5 @@
 import "./HomePage.css"
 import { useState,  } from "react"
-import { Link } from "react-router-dom"
 import EventForm from "../../Components/EventComponent/EventForm/EventForm"; 
 import EventListSingle from "../../Components/EventComponent/EventListSingle/EventListSingle";
 
@@ -10,7 +9,6 @@ export default function HomePage({user, events}) {
     return (
         <main className="home-page">
             <EventForm user={user} formOpen={formOpen} setFormOpen={setFormOpen}/>
-            <h1 className="app-name">PlanIt</h1>
             <h1 className="app-name">PlanIt</h1>
             <section className="new-event-container">
                 <div className="new-event-box">
