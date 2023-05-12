@@ -1,6 +1,6 @@
 # PlanIt
 
-PlanIt is a scheduling app where you can create, edit, and delete apps. The app starts with sign up page to create the user. The events created by a user are unique to them. The app has a side navbar with a glassy look with easy access to other pages.
+PlanIt is a responsive scheduling app where you can create, edit, and delete apps. The app starts with sign up page to create the user. The events created by a user are unique to them. The app has a side navbar with a glassy look with easy access to other pages.
 
 ## ScreenShots
 ![Home Page](https://imgur.com/b9eWaPv.png)
