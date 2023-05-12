@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# PlanIt
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+PlanIt is a scheduling app where you can create, edit, and delete apps. The app starts with sign up page to create the user. The events created by a user are unique to them. The app has a side navbar with a glassy look with easy access to other pages.
 
-## Available Scripts
+## ScreenShots
+![Home Page](https://imgur.com/b9eWaPv.png)
+![Events Page](https://imgur.com/OPfTEMt.png)
+![Event Details](https://imgur.com/B5rH2OQ.png)
+![Event Form](https://imgur.com/LO9HSRV.png)
+![NavBar](https://imgur.com/ReVwmy1.png)
+![Login & SignUp](https://imgur.com/u3CWdQJ.png)
 
-In the project directory, you can run:
 
-### `npm start`
+## Technologies Used
+    1.JavaScript
+    2.CSS
+    3.HTML
+    4.React
+    5.MongoDB
+    6.Node
+    7.Express
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### App Link
+[Click To Go To App](https://plan-i-t.herokuapp.com/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Next Steps
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Future Plans for this app is to add a completed task section allowing users to mark which tasks have been completed rather than just deleting them. 
+I would also like to add a feature that makes task have different levels of priority. So one task can be marked as important where others would be less of a priority.
+Lastly I would love to add a feature where users would be able to share their tasks with one another. Like group tasks.
