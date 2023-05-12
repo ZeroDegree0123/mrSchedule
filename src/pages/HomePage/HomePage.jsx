@@ -11,6 +11,7 @@ export default function HomePage({user, events}) {
         <main className="home-page">
             <EventForm user={user} formOpen={formOpen} setFormOpen={setFormOpen}/>
             <h1 className="app-name">PlanIt</h1>
+            <h1 className="app-name">PlanIt</h1>
             <section className="new-event-container">
                 <div className="new-event-box">
                     <button className="new-event-button" onClick={() => {setFormOpen(true)}}>+ Schedule An Event</button>
