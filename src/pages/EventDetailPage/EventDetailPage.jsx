@@ -15,7 +15,7 @@ export default function EventDetailPage({redirect}) {
             setEvent(eventData);
         };
         getEvent();
-    }, [])
+    }, [eventId])
 
     const handleDelete = function() {
         eventsAPI.deleteEvent(eventId);

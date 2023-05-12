@@ -13,7 +13,7 @@ export default class SignUpForm extends Component {
 
   handleChange = (evt) => {
     this.setState({
-      [evt.tadrget.name]: evt.target.value,
+      [evt.target.name]: evt.target.value,
     });
   };
 
